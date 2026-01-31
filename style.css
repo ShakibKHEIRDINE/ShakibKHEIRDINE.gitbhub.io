@@ -3,191 +3,209 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --linkcolor: hsl(184, 43%, 45%);
-    --linkcolorhover: hsl(184, 100%, 47%); 
 }
 
+/* Variables de couleurs - MODIFIER ICI pour changer les couleurs du site */
+:root {
+    --primary-color: #2D3E50;        /* Bleu marine foncé */
+    --secondary-color: #4A90E2;      /* Bleu clair moderne */
+    --accent-color: #50C878;         /* Vert émeraude */
+    --text-color: #333333;           /* Gris foncé pour le texte */
+    --text-light: #666666;           /* Gris moyen */
+    --background: #FAFBFC;           /* Blanc cassé */
+    --card-background: #FFFFFF;      /* Blanc pur */
+    --header-bg: #FFFFFF;            /* Blanc pour le header */
+    --shadow: rgba(0, 0, 0, 0.08);   /* Ombre douce */
+}
 
 /* Polices de base */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #ffffff;
-    color: rgb(86, 86, 86);
-    line-height: 1.6;
-    text-align: center; 
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--background);
+    color: var(--text-color);
+    line-height: 1.7;
+    text-align: center;
+    font-size: 16px;
 }
 
-.documents {
-    top: 10;
-    width: 70%;
-    margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    background-color: rgb(255, 255, 255);
-}
-
-.documents div {
-    padding: 20px;
-}
-
-.documents p {
-    padding-bottom: 10px;
-}
-
-.documents h1 {
-    color: #2c3e50;
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.documents h2 {
-    color: #2c3e50;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-.documents a {
-    color: var(--linkcolor);
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-weight: bold;
-}
-
-.documents a:hover {
-    color: var(--linkcolorhover);
-}
-
-.documents a.docclass {
-    color: yellow;
-}
-
-.documents a.docclass:hover {
-    color: rgb(255, 0, 0);
-}
-
-
-/* Conteneur principal */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-
-/* Header et bannière fixe */
+/* Header minimaliste et épuré */
 header {
-    background-color: #d3d3d3;  /* Gris clair pour la bannière */
-    color: #333;
-    padding: 20px 0;
+    background-color: var(--header-bg);
+    color: var(--text-color);
+    padding: 30px 0;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 20px var(--shadow);
     width: 100%;
     text-align: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95);
 }
 
 header h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    color: #2c3e50;  /* Gris plus foncé pour le titre */
-    margin-bottom: 5px;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
 }
 
 header p {
-    font-size: 1.2rem;
-    color: rgb(87, 87, 87);  /* Gris plus clair pour le sous-titre */
+    font-size: 1.1rem;
+    color: var(--text-light);
+    font-weight: 400;
 }
 
 header a {
-    color: rgb(95, 132, 129);
+    color: var(--secondary-color);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 header a:hover {
-    color: rgb(89, 157, 151); /* Gris bleuté plus doux */
-    text-decoration: underline;
+    color: var(--accent-color);
 }
 
+/* Navigation moderne */
 nav {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 nav ul {
     list-style: none;
     display: inline-flex;
+    gap: 10px;
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 0;
 }
 
 nav a {
-    color: rgb(84, 113, 113);
+    color: var(--text-color);
     text-decoration: none;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 nav a:hover {
-    color: rgb(109, 158, 158);
+    background-color: var(--background);
+    color: var(--secondary-color);
+}
+
+nav a.active {
+    background-color: var(--secondary-color);
+    color: white;
 }
 
 /* Section principale */
 main {
-    background-color: rgb(245, 245, 245);
-    padding: 40px 0;
-    margin-top: 120px;  /* Ajouter un espacement pour compenser la bannière fixe */
+    background-color: var(--background);
+    padding: 60px 20px;
+    margin-top: 160px;
+    min-height: calc(100vh - 300px);
 }
 
-/* Section d'introduction */
-.intro {
-    padding: 40px 0;
-    background-color: #f9f9f9;  /* Fond doux pour la section intro */
+/* Carte de contenu moderne */
+.documents {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 30px var(--shadow);
+    text-align: left;
+    background-color: var(--card-background);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.intro h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.documents:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
 }
 
-.intro p {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-    color: #555;  /* Gris doux pour le texte */
+.documents div {
+    padding: 35px 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.btn {
-    background-color: #b0bec5;  /* Gris clair pour les boutons */
-    color: #fff;
-    padding: 12px 24px;
+.documents div:last-child {
+    border-bottom: none;
+}
+
+.documents p {
+    padding-bottom: 12px;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.documents h1 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.documents h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    margin-top: 5px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 15px;
+}
+
+.documents h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 24px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+.documents a {
+    color: var(--secondary-color);
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
 }
 
-.btn:hover {
-    background-color: #90a4ae;  /* Gris plus foncé au survol */
+.documents a:hover {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
 }
 
-
-/* Footer */
+/* Footer minimaliste */
 footer {
-    background-color: #d3d3d3;  /* Gris clair pour le pied de page */
-    color: #333;
-    padding: 20px 0;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 30px 20px;
+    margin-top: 60px;
 }
 
 footer p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 10px;
+}
+
+footer b {
+    color: var(--accent-color);
+    font-weight: 600;
 }
 
 footer .social-links {
@@ -195,12 +213,41 @@ footer .social-links {
 }
 
 footer .social-links a {
-    color: #333;
+    color: white;
     text-decoration: none;
     margin: 0 15px;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    transition: color 0.3s ease;
 }
 
 footer .social-links a:hover {
-    text-decoration: underline;
+    color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .documents {
+        width: 95%;
+    }
+    
+    .documents div {
+        padding: 25px 20px;
+    }
+    
+    .documents h1 {
+        font-size: 1.8rem;
+    }
+    
+    .documents h2 {
+        font-size: 1.3rem;
+    }
 }
