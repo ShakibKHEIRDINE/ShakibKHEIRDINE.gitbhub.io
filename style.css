@@ -5,73 +5,73 @@
     box-sizing: border-box;
 }
 
-/* Variables de couleurs - PALETTE COLORÉE */
+/* Variables de couleurs - STYLE SOMBRE ET MODERNE */
 :root {
-    --primary-color: #6366F1;        /* Indigo vif */
-    --secondary-color: #EC4899;      /* Rose vibrant */
-    --accent-color: #10B981;         /* Vert émeraude */
-    --accent-orange: #F59E0B;        /* Orange chaleureux */
-    --text-color: #1F2937;           /* Gris très foncé */
-    --text-light: #6B7280;           /* Gris moyen */
-    --background: #F3F4F6;           /* Gris très clair */
-    --card-background: #FFFFFF;      /* Blanc pur */
-    --header-bg: #FFFFFF;            /* Blanc pour le header */
-    --shadow: rgba(99, 102, 241, 0.15);  /* Ombre colorée */
+    --primary-dark: #1A1A1A;         /* Noir profond */
+    --secondary-dark: #2D2D2D;       /* Gris foncé */
+    --accent-gold: #FDB813;          /* Jaune/Or */
+    --accent-gold-hover: #FFD700;    /* Or clair */
+    --text-white: #FFFFFF;           /* Blanc pur */
+    --text-light: #B0B0B0;           /* Gris clair */
+    --text-dark: #1A1A1A;            /* Texte sombre */
+    --card-bg: #252525;              /* Fond carte */
+    --shadow-dark: rgba(0, 0, 0, 0.5);
 }
 
 /* Polices de base */
 body {
     font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
-    color: var(--text-color);
+    background-color: var(--primary-dark);
+    color: var(--text-white);
     line-height: 1.7;
     text-align: center;
     font-size: 16px;
 }
 
-/* Header coloré */
+/* Header sombre et élégant */
 header {
-    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%);
-    color: white;
-    padding: 30px 0;
+    background-color: var(--secondary-dark);
+    color: var(--text-white);
+    padding: 25px 0;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     width: 100%;
     text-align: center;
+    border-bottom: 2px solid var(--accent-gold);
 }
 
 header h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: white;
+    color: var(--text-white);
     margin-bottom: 8px;
-    letter-spacing: -0.5px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 header p {
     font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--text-light);
     font-weight: 400;
 }
 
 header a {
-    color: #FDE68A;
+    color: var(--accent-gold);
     text-decoration: none;
     transition: all 0.3s ease;
     font-weight: 600;
 }
 
 header a:hover {
-    color: white;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    color: var(--accent-gold-hover);
+    text-shadow: 0 0 10px rgba(253, 184, 19, 0.5);
 }
 
-/* Navigation moderne et colorée */
+/* Navigation moderne */
 nav {
     margin-top: 20px;
 }
@@ -79,7 +79,7 @@ nav {
 nav ul {
     list-style: none;
     display: inline-flex;
-    gap: 10px;
+    gap: 15px;
 }
 
 nav ul li {
@@ -87,61 +87,60 @@ nav ul li {
 }
 
 nav a {
-    color: white;
+    color: var(--text-light);
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 500;
-    padding: 10px 20px;
-    border-radius: 25px;
+    padding: 10px 25px;
+    border-radius: 5px;
     transition: all 0.3s ease;
     display: inline-block;
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 nav a:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: var(--accent-gold);
+    color: var(--text-dark);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 nav a.active {
-    background-color: white;
-    color: var(--primary-color);
+    background-color: var(--accent-gold);
+    color: var(--text-dark);
     font-weight: 600;
 }
 
 /* Section principale */
 main {
-    background: transparent;
+    background-color: var(--primary-dark);
     padding: 60px 20px;
     margin-top: 160px;
     min-height: calc(100vh - 300px);
 }
 
-/* Carte de contenu avec bordure colorée */
+/* Carte de contenu moderne et sombre */
 .documents {
     width: 90%;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 10px 50px var(--shadow-dark);
     text-align: left;
-    background-color: var(--card-background);
-    border-radius: 20px;
+    background-color: var(--card-bg);
+    border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 5px solid;
-    border-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color)) 1;
+    border-left: 5px solid var(--accent-gold);
 }
 
 .documents:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 50px rgba(99, 102, 241, 0.25);
+    box-shadow: 0 15px 60px rgba(253, 184, 19, 0.3);
 }
 
 .documents div {
-    padding: 35px 40px;
-    border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+    padding: 40px 45px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .documents div:last-child {
@@ -155,20 +154,17 @@ main {
 }
 
 .documents h1 {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-size: 2.2rem;
+    color: var(--text-white);
+    font-size: 2.5rem;
     margin-bottom: 15px;
     font-weight: 700;
     letter-spacing: -0.5px;
 }
 
 .documents h2 {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-bottom: 12px;
+    color: var(--accent-gold);
+    font-size: 1.6rem;
+    margin-bottom: 15px;
     margin-top: 5px;
     font-weight: 600;
     position: relative;
@@ -183,46 +179,30 @@ main {
     transform: translateY(-50%);
     width: 5px;
     height: 30px;
-    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    background: var(--accent-gold);
     border-radius: 3px;
 }
 
 .documents a {
-    color: var(--secondary-color);
+    color: var(--accent-gold);
     text-decoration: none;
     transition: all 0.3s ease;
     font-weight: 600;
     border-bottom: 2px solid transparent;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .documents a:hover {
-    border-bottom: 2px solid var(--secondary-color);
-    transform: translateX(3px);
-    display: inline-block;
+    color: var(--accent-gold-hover);
+    border-bottom: 2px solid var(--accent-gold);
 }
 
-/* Footer coloré */
+/* Footer sombre */
 footer {
-    background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
-    color: white;
+    background-color: var(--secondary-dark);
+    color: var(--text-white);
     padding: 30px 20px;
     margin-top: 60px;
-    position: relative;
-    overflow: hidden;
-}
-
-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--accent-orange));
+    border-top: 3px solid var(--accent-gold);
 }
 
 footer p {
@@ -231,7 +211,7 @@ footer p {
 }
 
 footer b {
-    color: var(--accent-orange);
+    color: var(--accent-gold);
     font-weight: 600;
 }
 
@@ -240,7 +220,7 @@ footer .social-links {
 }
 
 footer .social-links a {
-    color: white;
+    color: var(--text-light);
     text-decoration: none;
     margin: 0 15px;
     font-size: 1rem;
@@ -248,21 +228,24 @@ footer .social-links a {
 }
 
 footer .social-links a:hover {
-    color: var(--accent-orange);
+    color: var(--accent-gold);
 }
 
-/* Styles pour les projets avec couleurs */
+/* Styles pour les projets */
 .project {
     transition: all 0.3s ease;
     position: relative;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
 }
 
 .project:hover {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.03), rgba(236, 72, 153, 0.03));
+    background-color: rgba(253, 184, 19, 0.05);
+    transform: translateX(5px);
 }
 
 .project-date {
-    color: var(--secondary-color);
+    color: var(--accent-gold);
     font-size: 0.9rem;
     font-style: italic;
     margin-bottom: 10px;
@@ -270,7 +253,7 @@ footer .social-links a:hover {
 }
 
 .project-description {
-    color: var(--text-color);
+    color: var(--text-light);
     line-height: 1.8;
     margin-bottom: 12px;
 }
@@ -282,42 +265,43 @@ footer .social-links a:hover {
 }
 
 .project-tech strong {
-    color: var(--primary-color);
+    color: var(--accent-gold);
 }
 
 .project a {
     display: inline-block;
     margin-right: 15px;
     margin-bottom: 10px;
-    padding: 10px 20px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    border-radius: 25px;
+    padding: 12px 25px;
+    background-color: var(--accent-gold);
+    color: var(--text-dark);
+    border-radius: 5px;
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 0.95rem;
+    font-weight: 600;
     transition: all 0.3s ease;
     border-bottom: none;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
-    -webkit-text-fill-color: white;
+    box-shadow: 0 4px 15px rgba(253, 184, 19, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .project a:hover {
-    background: linear-gradient(135deg, var(--accent-color), var(--accent-orange));
+    background-color: var(--accent-gold-hover);
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    box-shadow: 0 6px 20px rgba(253, 184, 19, 0.5);
     border-bottom: none;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
     
     nav ul {
         flex-direction: column;
-        gap: 5px;
+        gap: 8px;
     }
     
     .documents {
@@ -329,11 +313,11 @@ footer .social-links a:hover {
     }
     
     .documents h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
     
     .documents h2 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
     
     .project a {
